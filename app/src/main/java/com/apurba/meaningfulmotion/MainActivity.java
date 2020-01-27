@@ -2,6 +2,7 @@ package com.apurba.meaningfulmotion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Slide;
 import android.transition.TransitionManager;
@@ -26,5 +27,8 @@ public class MainActivity extends AppCompatActivity {
         TransitionManager.beginDelayedTransition(viewGroup, slide);
         ImageView image = findViewById(R.id.imageView);
         image.setVisibility(View.GONE);
+
+        Intent gridIntent = new Intent(this, GridImageActivity.class);
+        startActivity(gridIntent);
     }
 }
