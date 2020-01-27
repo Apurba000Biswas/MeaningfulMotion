@@ -18,9 +18,10 @@ public class DetailsActivity extends AppCompatActivity {
         Slide slide = new Slide(Gravity.BOTTOM);
         slide.addTarget(R.id.textView2);
         slide.addTarget(R.id.textView);
+        slide.addTarget(R.id.imageView5);
         slide.setInterpolator(AnimationUtils.loadInterpolator(this
                 , android.R.interpolator.linear_out_slow_in));
-        slide.setDuration(500);
+        slide.setDuration(300);
 
         getWindow().setEnterTransition(slide);
     }
