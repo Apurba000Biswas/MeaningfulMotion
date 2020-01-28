@@ -7,13 +7,14 @@
     tools:context=".DetailsActivity">
 
     <ImageView
+        android:transitionName="@string/shared_el_transition_name"
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/b3" />
+        app:srcCompat="@drawable/b1" />
 
     <TextView
         android:id="@+id/textView"

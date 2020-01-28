@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onHideButtonClick(View view) {
+    public void onActivityTransitionButtonClick(View view) {
         Slide slide = new Slide();
         slide.setSlideEdge(Gravity.TOP);
 
@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         image.setVisibility(View.GONE);
 
         Intent gridIntent = new Intent(this, GridImageActivity.class);
+        startActivity(gridIntent);
+    }
+
+    public void onSharedElementTransitionClicked(View view) {
+        Intent gridIntent = new Intent(this, GridImage2.class);
         startActivity(gridIntent);
     }
 }
