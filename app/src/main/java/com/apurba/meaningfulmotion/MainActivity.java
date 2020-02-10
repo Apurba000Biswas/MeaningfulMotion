@@ -36,4 +36,9 @@ public class MainActivity extends AppCompatActivity {
         Intent gridIntent = new Intent(this, GridImage2.class);
         startActivity(gridIntent);
     }
+
+    public void onInstructiveMotionClicked(View view) {
+        Intent instructiveMotionIntent = new Intent(this, InstructiveMotionActivity.class);
+        startActivity(instructiveMotionIntent);
+    }
 }
