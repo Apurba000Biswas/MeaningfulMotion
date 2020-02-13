@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,5 +41,10 @@ public class MainActivity extends AppCompatActivity {
     public void onInstructiveMotionClicked(View view) {
         Intent instructiveMotionIntent = new Intent(this, InstructiveMotionActivity.class);
         startActivity(instructiveMotionIntent);
+    }
+
+    public void onInterpolationClicked(View view) {
+        Intent interpolationActivity = new Intent(this, InterpolationActivity.class);
+        startActivity(interpolationActivity);
     }
 }

@@ -16,5 +16,31 @@
     <string name="shared_el_transition_name">test</string>
 
     <string name="demo_header">Boeing 777 is one of the great aircraft in the world. And this article is all about boeing 777</string>
+    <string name="hello_world">Hello World</string>
+
+
+
+    <string-array name="interpolators">
+        <item>FastOutLinearInInterpolator</item>
+        <item>FastOutSlowInInterpolator</item>
+        <item>LinearOutSlowInInterpolator</item>
+        <item>----------</item>
+        <item>AccelerateDecelerateInterpolator</item>
+        <item>AccelerateInterpolator</item>
+        <item>AnticipateInterpolator</item>
+        <item>AnticipateOvershootInterpolator</item>
+        <item>BounceInterpolator</item>
+        <item>DecelerateInterpolator</item>
+        <item>LinearInterpolator</item>
+        <item>OvershootInterpolator</item>
+    </string-array>
+
+    <string-array name="durations">
+        <item>100ms</item>
+        <item>300ms</item>
+        <item>900ms</item>
+        <item>1500ms</item>
+        <item>3000ms</item>
+    </string-array>
 
 </resources>
