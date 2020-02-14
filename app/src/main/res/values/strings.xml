@@ -19,7 +19,6 @@
     <string name="hello_world">Hello World</string>
 
 
-
     <string-array name="interpolators">
         <item>FastOutLinearInInterpolator</item>
         <item>FastOutSlowInInterpolator</item>

@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">@android:color/black</color>
     <color name="colorAccent">#D81B60</color>
 
-
+    <color name="colorRecyclerViewBack">#f0f0f0</color>
 
 </resources>

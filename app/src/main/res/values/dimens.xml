@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     
     <dimen name="init_scroll_up_distance">200dp</dimen>
+
+    <dimen name="offset_y">300dp</dimen>
 </resources>

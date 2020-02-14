@@ -47,4 +47,9 @@ public class MainActivity extends AppCompatActivity {
         Intent interpolationActivity = new Intent(this, InterpolationActivity.class);
         startActivity(interpolationActivity);
     }
+
+    public void onMultipleElementClicked(View view) {
+        Intent intent = new Intent( this, MultipleElementActivity.class);
+        startActivity(intent);
+    }
 }
