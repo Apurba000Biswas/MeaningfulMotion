@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onActivityTransitionButtonClick(View view) {
+
+        /*
         Slide slide = new Slide();
         slide.setSlideEdge(Gravity.TOP);
 
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent gridIntent = new Intent(this, GridImageActivity.class);
         startActivity(gridIntent);
+
+         */
     }
 
     public void onSharedElementTransitionClicked(View view) {
@@ -50,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onMultipleElementClicked(View view) {
         Intent intent = new Intent( this, MultipleElementActivity.class);
+        intent.putExtra(MultipleElementActivity.CHAOTIC_FLAG, false);
+        startActivity(intent);
+    }
+
+    public void onMultipleChaoticElementsClicked(View view) {
+        Intent intent = new Intent( this, MultipleElementActivity.class);
+        intent.putExtra(MultipleElementActivity.CHAOTIC_FLAG, true);
         startActivity(intent);
     }
 }
