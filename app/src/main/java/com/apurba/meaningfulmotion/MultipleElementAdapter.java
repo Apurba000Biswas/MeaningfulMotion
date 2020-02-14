@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,9 +17,12 @@ import java.util.List;
 public class MultipleElementAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<MultipleElementDataItem> dataSet;
+    private itemClickListener listener;
 
-    public MultipleElementAdapter(List<MultipleElementDataItem> dataItems){
+    public MultipleElementAdapter(List<MultipleElementDataItem> dataItems
+            , itemClickListener listener){
         dataSet = dataItems;
+        this.listener = listener;
     }
 
     @NonNull
@@ -43,16 +47,26 @@ public class MultipleElementAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
 
 
-    class ElementHolder extends RecyclerView.ViewHolder{
+    class ElementHolder extends RecyclerView.ViewHolder {
         private ImageView img;
         private View root;
         private Context context;
 
         ElementHolder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.image);
+            //img = itemView.findViewById(R.id.image);
             root = itemView.findViewById(R.id.root_item_layout);
             context = itemView.getContext();
+
+            root.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
+                    if (listener != null){
+                        listener.onItemClicked(root);
+                    }
+                }
+            });
         }
 
         void bindView(MultipleElementDataItem item){
@@ -73,8 +87,12 @@ public class MultipleElementAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                     .translationY(0f)
                     .alpha(1f)
                     .setInterpolator(interpolator)
-                    .setDuration(500)
+                    .setDuration(1000)
                     .start();
         }
+    }
+
+    interface itemClickListener{
+        void onItemClicked(View view);
     }
 }

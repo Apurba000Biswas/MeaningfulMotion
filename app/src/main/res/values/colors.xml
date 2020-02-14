@@ -6,4 +6,6 @@
 
     <color name="colorRecyclerViewBack">#f0f0f0</color>
 
+    <color name="descColor">#aaaea5</color>
+
 </resources>

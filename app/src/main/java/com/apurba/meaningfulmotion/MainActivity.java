@@ -4,13 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.transition.Slide;
-import android.transition.TransitionManager;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,13 +48,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void onMultipleElementClicked(View view) {
         Intent intent = new Intent( this, MultipleElementActivity.class);
-        intent.putExtra(MultipleElementActivity.CHAOTIC_FLAG, false);
+        intent.putExtra(MultipleElementActivity.MULT_EL_FLAG, MultipleElementActivity.MULTI_EL_REGULAR);
         startActivity(intent);
     }
 
     public void onMultipleChaoticElementsClicked(View view) {
         Intent intent = new Intent( this, MultipleElementActivity.class);
-        intent.putExtra(MultipleElementActivity.CHAOTIC_FLAG, true);
+        intent.putExtra(MultipleElementActivity.MULT_EL_FLAG, MultipleElementActivity.MULTI_EL_CHAOTIC);
+        startActivity(intent);
+    }
+
+    public void onChangeSizeClicked(View view) {
+        Intent intent = new Intent( this, MultipleElementActivity.class);
+        intent.putExtra(MultipleElementActivity.MULT_EL_FLAG, MultipleElementActivity.MULTI_EL_SIZE);
+        startActivity(intent);
+    }
+
+    public void onCurvedMotionClicked(View view) {
+        Intent intent = new Intent( this, MultipleElementActivity.class);
+        intent.putExtra(MultipleElementActivity.MULT_EL_FLAG, MultipleElementActivity.MULTI_EL_CURVE_DETAILS);
         startActivity(intent);
     }
 }

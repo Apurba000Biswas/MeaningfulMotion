@@ -51,7 +51,7 @@ public class MultipleElementChaoticAdapter extends RecyclerView.Adapter<Recycler
 
         ElementHolder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.image);
+            //img = itemView.findViewById(R.id.image);
             root = itemView.findViewById(R.id.root_item_layout);
             context = itemView.getContext();
         }
@@ -88,7 +88,7 @@ public class MultipleElementChaoticAdapter extends RecyclerView.Adapter<Recycler
                     .translationX(0f)
                     .alpha(1f)
                     .setInterpolator(interpolator)
-                    .setDuration(500)
+                    .setDuration(1000)
                     .start();
         }
     }
