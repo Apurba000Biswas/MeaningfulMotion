@@ -70,4 +70,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(MultipleElementActivity.MULT_EL_FLAG, MultipleElementActivity.MULTI_EL_CURVE_DETAILS);
         startActivity(intent);
     }
+
+    public void onAnimatedVectorClick(View view) {
+        Intent intent = new Intent(this, HeartFillActivity.class);
+        startActivity(intent);
+    }
+
 }
