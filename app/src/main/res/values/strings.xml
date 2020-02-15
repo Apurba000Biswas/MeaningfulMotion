@@ -42,4 +42,6 @@
         <item>3000ms</item>
     </string-array>
 
+    <string name="transition_apurba">apurba</string>
+
 </resources>

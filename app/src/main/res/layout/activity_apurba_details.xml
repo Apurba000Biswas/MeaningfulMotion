@@ -9,6 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
+        android:transitionName="@string/transition_apurba"
         android:layout_height="200dp"
         android:background="@drawable/down_arch"
         android:elevation="10dp"

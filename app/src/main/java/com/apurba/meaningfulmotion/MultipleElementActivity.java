@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.animation.ObjectAnimator;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -68,7 +69,7 @@ public class MultipleElementActivity extends AppCompatActivity {
                     = new MultipleElementAdapter(dataItems, new MultipleElementAdapter.itemClickListener() {
                 @Override
                 public void onItemClicked(View root) {
-                    runDetails();
+                    runDetails(root);
                 }
             });
             recyclerView.setAdapter(adapter);
@@ -98,8 +99,9 @@ public class MultipleElementActivity extends AppCompatActivity {
         recyclerView.computeVerticalScrollExtent();
     }
 
-    private void runDetails(){
+    private void runDetails(View view){
         Intent intent = new Intent(this, ApurbaDetailsActivity.class);
-        startActivity(intent);
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(
+                this, view, view.getTransitionName()).toBundle());
     }
 }
