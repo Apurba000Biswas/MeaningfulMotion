@@ -82,7 +82,7 @@ public class MultipleElementChaoticAdapter extends RecyclerView.Adapter<Recycler
             }
             root.setTranslationY(yOffset);
 
-            // now animate them back into their natural position
+            // now animateHeart them back into their natural position
             root.animate()
                     .translationY(0f)
                     .translationX(0f)

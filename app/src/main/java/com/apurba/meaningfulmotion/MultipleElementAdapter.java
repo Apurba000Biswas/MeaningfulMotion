@@ -82,7 +82,7 @@ public class MultipleElementAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             root.setVisibility(View.VISIBLE);
             root.setTranslationY(offset);
             root.setAlpha(0.85f);
-            // then animate back to natural position
+            // then animateHeart back to natural position
             root.animate()
                     .translationY(0f)
                     .alpha(1f)
