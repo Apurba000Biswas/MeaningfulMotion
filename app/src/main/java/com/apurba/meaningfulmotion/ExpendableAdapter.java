@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,8 +34,10 @@ public class ExpendableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     private static class ExpandableRecyclerViewHolder extends RecyclerView.ViewHolder{
 
-        private RecyclerView.LayoutManager verticalLayoutManager;
-        private RecyclerView.LayoutManager horizontalLayoutManager;
+        private final RecyclerView.LayoutManager verticalLayoutManager;
+        private final RecyclerView.LayoutManager horizontalLayoutManager;
+        private final ExpandableItemAdapter verticalAdapter;
+        private final ExpandableItemAdapter horizontalAdapter;
 
 
         public ExpandableRecyclerViewHolder(@NonNull View itemView) {
@@ -44,6 +45,9 @@ public class ExpendableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             horizontalLayoutManager
                     = new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.HORIZONTAL, false);
             verticalLayoutManager = new LinearLayoutManager(itemView.getContext());
+
+            horizontalAdapter = new ExpandableItemAdapter(ExpandableItemAdapter.AdapterMode.HORIZONTAL);
+            verticalAdapter = new ExpandableItemAdapter(ExpandableItemAdapter.AdapterMode.VERTICAL);
 
         }
 
@@ -53,8 +57,7 @@ public class ExpendableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
             recyclerView.setLayoutManager(horizontalLayoutManager);
 
-            ExpandableItemAdapter adapter = new ExpandableItemAdapter();
-            recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(horizontalAdapter);
 
 
             TextView expandMeTv = itemView.findViewById(R.id.textView6);
@@ -62,10 +65,9 @@ public class ExpendableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 @Override
                 public void onClick(View view) {
                     recyclerView.setLayoutManager(verticalLayoutManager);
+                    recyclerView.setAdapter(verticalAdapter);
                 }
             });
-
-
         }
 
 

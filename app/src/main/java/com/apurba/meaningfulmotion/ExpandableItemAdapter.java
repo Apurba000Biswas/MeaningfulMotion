@@ -12,13 +12,30 @@ import com.squareup.picasso.Picasso;
 
 public class ExpandableItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
+    public enum AdapterMode{
+        VERTICAL, HORIZONTAL
+    }
+
+    private AdapterMode mode;
+
+    public ExpandableItemAdapter(AdapterMode mode){
+        this.mode = mode;
+    }
+
 
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.expandable_item_horizontal, parent, false);
+        View view;
+
+        if (mode == AdapterMode.HORIZONTAL){
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.expandable_item_horizontal, parent, false);
+        }else{
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.expandable_item_vertical, parent, false);
+        }
         return new ExpendableItemViewHolder(view);
     }
 
