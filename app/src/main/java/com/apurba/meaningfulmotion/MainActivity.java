@@ -76,4 +76,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onExpandableButtonClicked(View view) {
+        Intent intent = new Intent(this, ExpandableRecyclerActivity.class);
+        startActivity(intent);
+    }
 }
